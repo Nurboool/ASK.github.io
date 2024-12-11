@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>lab.10</title>
+        <link href="lab10.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+
+            /* header {
+    grid-area: header;
+    background-color: chartreuse;
+    padding: 20px;
+    text-align: center;
+
+} */
+article {
+    grid-area: article;
+    padding: 20px;
+    height: 70px;
+    
+}
+aside {
+    grid-area: aside;
+    background-color: antiquewhite;
+    padding: 20px;
+    te
+    
+}
+/* nav {
+    grid-area: nav;
+    background-color: darkcyan;
+    padding: 20px;
+} */
+footer {
+    grid-area: footer;
+    background-color: chartreuse;
+    padding: 20px;
+    text-align: center
+}
+.a {
+        display: grid;
+    grid-template-areas: 
+      "header header header"
+      "article     aside nav"
+      "footer footer footer";
+     grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    
+    height: 100vh;
+}
+body {
+   margin: 0;
+}
+#p {
+    width: 40px;
+    border-radius: 20px 9px  20px;
+}
+.d {
+    border-radius: 10px 10px 10px;
+    width: 200px;
+    margin: 10px;
+}
+#z {
+    position: relative;
+    top: 30px;
+}
+#q {
+    position: relative;
+    top: 20px;
+}
+.askar {
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px;
+    width: 300px;
+}
+.as {
+   text-shadow: 10px;
+}
+.share-container {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    left: 1400px;
+}
+
+.share-btn {
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.share-icon {
+    color: white;
+    font-size: 20px;
+}
+
+.share-menu {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    z-index: 10;
+}
+
+.share-menu .share-link {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.share-menu .share-link:hover {
+    background-color: #f0f0f0;
+}
+
+.share-container:hover .share-menu {
+    display: flex;
+}
+.progress-bar {
+    margin-left: 2cm;
+    margin-right: 1cm;
+     padding-left: 1.5cm;
+    width: 90%;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    margin: 10px 0;
+    height: 20px;
+    overflow: hidden;
+}
+.progress {
+    margin-left: 1cm;
+    margin-right: 1cm;
+    height: 100%;
+    border-radius: 8px;
+    animation: fill-bar linear forwards infinite;
+}
+.progress.blue {
+    background-color: #4285f4;
+    animation-duration: 5s; 
+}
+
+.progress.green {
+    background-color: #34a853;
+    animation-duration: 4s;
+}
+
+.progress.cyan {
+    background-color: #1da1f2;
+    animation-duration: 3s;
+}
+
+.progress.yellow {
+    background-color: #fbbc05;
+    animation-duration: 2s;
+}
+
+.progress.red {
+    background-color: #ea4335;
+    animation-duration: 1s;
+}
+
+@keyframes fill-bar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+header {
+  
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: aqua;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+}
+header .tay {
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    transition: 5s;
+}
+header .tay:hover {
+    transform: scale(1,2);
+}
+header nav ul li {
+    position: relative;
+    float: left;
+}
+header nav ul li a {
+    padding: 15px;
+    color: black;
+    font-size: 16px;
+    display: block;
+}
+header nav ul li a:hover {
+    background: black;
+    color: aliceblue;
+}
+nav ul li ul {
+    position: absolute;
+    left: 10;
+    width: 180px;
+    background: #fff;
+    display: none;
+}
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid;
+    
+}
+nav ul li ul li ul {
+    left: 180px;
+    top: 0;
+}
+nav ul li:hover > ul {
+    display: initial;
+}
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; 
+    width: 250px;
+    height: 100%;
+    background: #333;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.sidebar.active {
+    right: 0; 
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: #575757;
+}
+@media (max-width: 768px) {
+    .menu-button {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-button {
+        top: 10px;
+        right: 10px;
+        font-size: 18px; 
+        padding: 8px 12px;
+    }
+
+    .sidebar {
+        width: 180px; 
+
+    }
+    .sidebar a {
+        padding: 10px 15px; 
+        font-size: 14px;
+    }
+}
+.al {
+    opacity: 50%;
+   
+    
+}
+.al:hover {
+    opacity: 1;
+    
+}
+        </style>
+    </head>
+    <body>
+    
+        
+    
+            <header><h1> <img src="2.png" id="p"></a>Джутсу</h1>
+
+                <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+                    <li class="nav-item" role="presentation">
+                      <a href="https://jut.su/"><button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a href="https://jut.su/"><button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button></a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                     <a href="https://jut.su/"> <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button></a>
+                    </li>
+                  </ul>
+            </header>
+            
+              
+            <div class="menu-button" onclick="toggleMenu()">☰</div>
+            <div class="sidebar" id="sidebar">
+                <a href="https://jut.su/">Сайттар</a>
+                <a href="https://jut.su/">Джутсу</a>
+                <a href="https://jut.su/">Аилиберия</a>
+                <a href="https://jut.su/">аниме</a>
+            </div>
+        
+            <script>
+                function toggleMenu() {
+                    const sidebar = document.getElementById("sidebar");
+                    sidebar.classList.toggle("active");
+                }
+            </script>
+        
+            <div class="a">
+            <article>
+            <div class="al">
+            <img src="3.png" class="d">
+            <img src="4.png" class="d">
+            <img src="6.png" class="d">
+            <img src="7.png" class="d">
+            </div>
+                <p><ins id="z">Синия тюрма бул 2022 жылы шыкты бул футбол туралы аниме менын ен суикты анимем каз 2 сезон шгп жатыр япония против синия тюрма</ins></p>
+            <p id="q">Чтобы выиграть Чемпионат мира, японская футбольная ассоциация решает нанять загадочного и эксцентричного тренера Дзимпати Эго. Тот в уверенности, что в Японии нет хороших нападающих, создает Блю Лок — тюрьму, где триста юных талантливых футболистов соревнуются друг с другом</p>
+                
+            <div> <img src="10.png" class="d"></div>
+            <img src="5.png" class="d">
+                    <img src="7.png" class="d">
+                 <img src="4.png" class="d">
+            <img src="6.png" class="d">
+            <section>
+                <div class="progress-bar">
+                    <div class="progress blue" style="width: 10%;"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress green" style="width: 25%;"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress cyan" style="width: 40%;"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress yellow" style="width: 50%;"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress red" style="width: 80%;"></div>
+                </div>
+            </section>
+            <p class="text-primary">.text-primary</p>
+<p class="text-secondary">.text-secondary</p>
+<p class="text-success">.text-success</p>
+<p class="text-danger">.text-danger</p>
+<p class="text-warning bg-dark">.text-warning</p>
+<p class="text-info bg-dark">.text-info</p>
+<p class="text-light bg-dark">.text-light</p>
+<p class="text-dark">.text-dark</p>
+<p class="text-body">.text-body</p>
+<p class="text-muted">.text-muted</p>
+<p class="text-white bg-dark">.text-white</p>
+<p class="text-black-50">.text-black-50</p>
+<p class="text-white-50 bg-dark">.text-white-50</p>
+            </article>
+            <aside>
+                <a href="https://jut.su/sword-arts-online/"><img src="5.png" class="askar"></a><p>Сао бул 2016 жылы шыккан аниме бул аниме вертуалный реалност  туралы аниме</p>
+                <a href="https://jut.su/oneepiece"><img src="6.png" class="askar"></a><p>Ван пис бул 1998 жылы шыккан аниме бул пираттар турралы аниме </p>
+                <a href="https://jut.su/bookofd/"><img src="7.png" class="askar"></a><p>Тэтрад смепти бул уайт туралы мануплатция туралы жанеде оте кызык аниме </p>
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        </aside>
+       
+<!--         
+            <nav>
+        
+                <h4 class="as"><a href="https://jut.su/sword-arts-online/">Мастера меч онлайн</a></h4>
+                <h4 class="as"><a href="https://jut.su/oneepiece">Ванпис</a></h4>
+                <h4 class="as"><a href="https://jut.su/bookofd/">Тетрад смерти</a></h4>
+              
+        </nav> -->
+     
+            <!-- <footer><img src="2.png" id="p">Джутсу.com
+                <p><input type="email"></p>
+                
+        </footer> -->
+       
+        </div>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://avatars.mds.yandex.net/i?id=507e6a8ff3e9d8d09493cb1867fa39959815fd75565fe33c-13469218-images-thumbs&n=13" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://avatars.mds.yandex.net/i?id=507e6a8ff3e9d8d09493cb1867fa39959815fd75565fe33c-13469218-images-thumbs&n=13" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
